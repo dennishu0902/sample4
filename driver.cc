@@ -5,6 +5,7 @@ using namespace std;
 #define GROUPSIZE 5
 #define GOOD_EXP  5
 #define GOOD_STM  5
+#define MAXITERATION 50
 
 
 std::vector<string>  split(string strin)   // whitespace
@@ -116,26 +117,49 @@ int main()
             pGrp1->AddVolunteer(vols.back());
             vols.pop_back();
           } 
-       // cout << *pGrp1;   
+        cout << *pGrp1;   
         grps.push_back(*pGrp1);   
     }
-    for(auto iter=grps.begin();iter != grps.end();iter++)
+    for(auto iter=grps.begin();iter != grps.end();)
     {
         if(((*iter).GetAvgBuildingExp() == GOOD_EXP) && ((*iter).GetAvgStamina() == GOOD_STM))
-        {
+        {   //satisfied, move to grp_w
             grps_w.push_back(*iter);
-            cout << "Good One";
-            cout << *iter;
-            //grps.remove(*iter);   
+            grps.erase(iter);   
         }
+        else
+            iter++;
     } 
 
-
-  //  while(i< MAXITERATION)
-  // {
- //
-
-   // }
+    for(auto iter=grps_w.begin();iter != grps_w.end(); iter++)
+    {
+            cout << "Good One 1";
+            cout << *iter;
+    } 
+    i = 0;
+    int k,h,l;
+    j=k=h=l=0;
+    std::vector<Group>::iterator G1,G2,G3,G4;
+ //   while(i< MAXITERATION)
+    {
+       //find Group pair
+       for(auto iter=grps.begin();iter != grps.end();iter++)
+        {
+         if(((*iter).GetAvgBuildingExp() >= GOOD_EXP) && ((*iter).GetAvgStamina() >= GOOD_STM)) 
+              { G1 = iter; j=1;}      
+         else if(((*iter).GetAvgBuildingExp() <= GOOD_EXP) && ((*iter).GetAvgStamina() <= GOOD_STM)) 
+              { G2 = iter; k=1;}   
+         else if(((*iter).GetAvgBuildingExp() >= GOOD_EXP) && ((*iter).GetAvgStamina() <= GOOD_STM)) 
+              { G3 = iter; h=1;}  
+         else 
+              { G4 = iter; l=1;}     
+        } 
+         if(j==1)
+           cout << *G1;
+        // cout << *G2;
+        // cout << *G3;
+        // cout << *G4;
+    }
  
    // cout << G1;
   //  cout<<G1.GetRandomVolunteer()->GetName()<<std::endl;
