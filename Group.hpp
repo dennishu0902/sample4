@@ -14,7 +14,7 @@ public:
    int GetAvgBuildingExp() const;
    int GetAvgStamina() const;
    std::vector<Volunteer> GetReturningMembors();
-   Volunteer GetRandomVolunteer();
+   Volunteer* GetRandomVolunteer();
    friend ostream& operator<<(std::ostream &os,  const Group &g_in)
    {
       os << "Group:" << std::endl; 
@@ -22,11 +22,13 @@ public:
       {
          os << g1.GetName()<< std::endl;
       }
-      os << "AvgBuildingExp";
+      os << "AvgBuildingExp  ";
       os << g_in.GetAvgBuildingExp();
       os <<  std::endl; 
-      os << "GetAvgStamina" ;
+      os << "GetAvgStamina  " ;
       os << g_in.GetAvgStamina();
+      os <<  std::endl; 
+      return os;
    };
 };
 #endif

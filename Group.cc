@@ -5,6 +5,7 @@
 int  Group::AddVolunteer(const Volunteer &vol)
 {
    myList.push_back(vol);
+   return 1;
 }
 int  Group::GetAvgBuildingExp() const
 {
@@ -37,7 +38,7 @@ std::vector<Volunteer>  Group::GetReturningMembors()
       if(vol.isReturning() == true) returning.push_back(vol);
    return  returning;
 }
-Volunteer  Group::GetRandomVolunteer()
+Volunteer*  Group::GetRandomVolunteer()
 {
   int i,pos,size;
   i = rand();
@@ -45,10 +46,11 @@ Volunteer  Group::GetRandomVolunteer()
   assert(size>0);
   i = i % size;
   pos = 0;
-  for(auto vol:myList)
+  for(auto &vol:myList)
     {
-      if(pos == i) return vol;
+      if(pos == i) return &vol;
       else pos++;
     }
+    return NULL;
 }
 
