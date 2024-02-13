@@ -10,6 +10,7 @@ int main()
     Volunteer  Vol5("Liu", 6, 7, false);
     Volunteer  Vol6("Xu", 5, 8, true);
     Group G1;
+    Group G2;
     G1.AddVolunteer(Vol1);
     G1.AddVolunteer(Vol2);
     G1.AddVolunteer(Vol3);
@@ -17,4 +18,7 @@ int main()
     G1.AddVolunteer(Vol5);
     G1.AddVolunteer(Vol6);
     cout << G1;
+    cout<<G1.GetRandomVolunteer().GetName()<<std::endl;
+    cout<<G1.GetRandomVolunteer().GetName()<<std::endl;
+    cout<<G1.GetRandomVolunteer().GetName()<<std::endl;
 }

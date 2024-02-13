@@ -1,4 +1,7 @@
 #include "Group.hpp"
+#include <cstdlib>
+#include <cassert>
+
 int  Group::AddVolunteer(const Volunteer &vol)
 {
    myList.push_back(vol);
@@ -36,6 +39,16 @@ std::vector<Volunteer>  Group::GetReturningMembors()
 }
 Volunteer  Group::GetRandomVolunteer()
 {
-
+  int i,pos,size;
+  i = rand();
+  size = myList.size();
+  assert(size>0);
+  i = i % size;
+  pos = 0;
+  for(auto vol:myList)
+    {
+      if(pos == i) return vol;
+      else pos++;
+    }
 }
 
