@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
         totalpeople++;
         }
     }while(cnt); 
-    //Assign returning 
+    //Assign returning, make sure at least one returning in group 
     if((totalpeople/GROUPSIZE) >= total_returning)
        maxgrps = total_returning;
     else 
@@ -163,7 +163,6 @@ int main(int argc, char *argv[])
               { G4 = iter; l=1;}     
          if((j==1) && (k==1))
          { //matching
-       //    cout << "matching 0" << std::endl;  
            cnt = 0;
            do
            {
@@ -185,7 +184,6 @@ int main(int argc, char *argv[])
          }
         if((h==1) && (l==1))
          { //matching
-     //      cout << "matching 1" << std::endl; 
            cnt = 0;
            do
            {
@@ -205,9 +203,7 @@ int main(int argc, char *argv[])
             {
                 swap(*pVol1,*pVol2);
             }
-            /* code */
            } while (cnt++<GROUPSIZE);
-            
            h=0;
            l=0;
          }
