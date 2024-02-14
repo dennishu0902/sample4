@@ -1,6 +1,0 @@
-  Lee 3 5 0
-    Wang 9 8 1
-    Zhang 2 10 0 
-    Sun 7 8 1
-    Liu 6 7 0
-    Xu  5 8  1
