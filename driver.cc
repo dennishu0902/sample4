@@ -191,13 +191,7 @@ int main(int argc, char *argv[])
             pVol2 = G4->GetRandomVolunteer();
             if(pVol1->isReturning() && pVol2->isReturning() )
             {
-                fsout << "before" ;
-                fsout << *G3 ;
-                fsout << *G4 ;
                 swap(*pVol1,*pVol2);
-                fsout << "after" ;
-                fsout << *G3 ;
-                fsout << *G4 ;
             }
             else if((!pVol1->isReturning()) && (!pVol2->isReturning()) )
             {
