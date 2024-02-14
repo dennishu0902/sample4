@@ -17,17 +17,17 @@ public:
    Volunteer* GetRandomVolunteer();
    friend ostream& operator<<(std::ostream &os,  const Group &g_in)
    {
-      os << "Group:" << std::endl; 
+      os << "Group:" ;
+      os << " AvgBuildingExp  ";
+      os << g_in.GetAvgBuildingExp();
+      os << " GetAvgStamina  " ;
+      os << g_in.GetAvgStamina();
+      os << std::endl; 
       for(auto g1:g_in.myList)
       {
          os << g1.GetName()<< std::endl;
       }
-      os << "AvgBuildingExp  ";
-      os << g_in.GetAvgBuildingExp();
-      os <<  std::endl; 
-      os << "GetAvgStamina  " ;
-      os << g_in.GetAvgStamina();
-      os <<  std::endl; 
+      
       return os;
    };
 };

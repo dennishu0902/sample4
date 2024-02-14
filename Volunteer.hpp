@@ -1,7 +1,7 @@
 #ifndef VOLUNTEER_H
 #define VOLUNTEER_H
-#define MIN_ALLOWED 2
-#define MAX_ALLOWED 8
+#define MIN_ALLOWED 1
+#define MAX_ALLOWED 9
 #include <string>
 using namespace std;
 class Volunteer

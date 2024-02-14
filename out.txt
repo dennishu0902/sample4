@@ -1,0 +1,24 @@
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Olympe
+Clifford
+Arlie
+Kelwin
+Sharla
+Group: AvgBuildingExp  6 GetAvgStamina  5
+Wallis
+Marge
+Jaquelyn
+Michail
+Graehme
+Group: AvgBuildingExp  5 GetAvgStamina  7
+Leroy
+Goldie
+Barthel
+Moishe
+Spud
+Group: AvgBuildingExp  5 GetAvgStamina  6
+Pascale
+Marga
+Jerrilee
+Paulette
+Kathryn
