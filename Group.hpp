@@ -1,14 +1,13 @@
 #ifndef GROUP_H
 #define GROUP_H
 #include "Volunteer.hpp"
-#include <list>
 #include <vector>
 #include <string>
 #include <iostream>
 
 class Group
 {
-   std::list<Volunteer> myList;
+   std::vector<Volunteer> myList;
 public:
    int AddVolunteer(const Volunteer &vol);
    int GetAvgBuildingExp() const;

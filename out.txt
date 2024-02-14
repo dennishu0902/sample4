@@ -1,24 +1,588 @@
 Group: AvgBuildingExp  5 GetAvgStamina  5
-Olympe
-Clifford
-Arlie
-Kelwin
-Sharla
+Audrye
+Myrtle
+Linnet
+Ilysa
+Fanechka
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Fanni
+Joab
+Ingrid
+Igor
+Laurice
+Group: AvgBuildingExp  7 GetAvgStamina  8
+Mandie
+Lev
+Raymund
+Carroll
+Winnie
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Sherie
+Hedy
+Beverly
+Marlie
+Ludwig
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Margurite
+Nicolle
+Jenny
+Er
+Kerstin
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Penn
+Shalne
+Ely
+Irma
+Jeanelle
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Suzann
+Peyton
+Annabela
+Em
+Nicki
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Marlyn
+Trudi
+Carolann
+Aridatha
+Anna-Diana
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Calida
+Brana
+Karlyn
+Newton
+Sara-Ann
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Ally
+Nettie
+Nannette
+Pam
+Ewan
+Group: AvgBuildingExp  9 GetAvgStamina  7
+Heida
+Robin
+Monique
+Oran
+Morganne
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Maddie
+Jerrome
+Evangelin
+Sayres
+Ivie
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Melamie
+Thad
+Rana
+Kristian
+Sybille
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Julissa
+Tommi
+Briteny
+Clemente
+Friedrich
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Jemimah
+Darda
+Ephrem
+Justina
+Aileen
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Marion
+Samuele
+Fortune
+Bartholomeo
+Row
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Maryl
+Veronique
+Heddi
+Samson
+Florian
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Jemima
+Ward
+Giorgi
+Dulcia
+Lena
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Morris
+Angy
+Maribel
+Krysta
+Emmye
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Hiram
+Aleksandrs
+Rickie
+Jean-Pierre
+Mariele
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Davina
+Maisey
+Tomasina
+Lebbie
+Hermina
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Zorine
+Pepito
+Ellissa
+Anette
+Averell
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Greg
+Clayborn
+Valeda
+Abbie
+Dyanne
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Mikey
+Rea
+Nixie
+Evvy
+Shay
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Candy
+Cassondra
+Gwenn
+Rachael
+Kip
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Tiphany
+Hollie
+Kin
+Bertine
+Tracy
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Dolly
+Minetta
+Mugsy
+Olva
+Odette
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Larina
+Baxter
+Pavla
+Mathilde
+Leonie
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Gustavus
+Dawn
+Hercule
+Wynny
+Iseabal
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Loria
+Minny
+Rachele
+Adorne
+Josie
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Corissa
+Terrence
+Christiano
+Ronny
+Rabi
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Raoul
+Dawna
+Cyrus
+Mindy
+Stearn
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Selina
+Noble
+Ernest
+Alley
+Annalena
 Group: AvgBuildingExp  6 GetAvgStamina  5
-Wallis
-Marge
-Jaquelyn
-Michail
-Graehme
+Miran
+Wendi
+Karoline
+Josselyn
+Gwenette
+Group: AvgBuildingExp  6 GetAvgStamina  5
+Kalil
+Michaella
+Roselia
+Saree
+Alvin
 Group: AvgBuildingExp  5 GetAvgStamina  7
-Leroy
-Goldie
-Barthel
-Moishe
-Spud
+Benedikta
+Winonah
+Hartwell
+Debbra
+Luella
+Group: AvgBuildingExp  8 GetAvgStamina  6
+Cassaundra
+Adlai
+Shalna
+Sheba
+Rockwell
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Kandace
+Linnell
+Marglerite
+Oliver
+Rani
+Group: AvgBuildingExp  6 GetAvgStamina  5
+Ciel
+Candra
+Rustin
+Roch
+Charleen
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Adah
+Hillard
+Margie
+Alissa
+Corie
+Group: AvgBuildingExp  6 GetAvgStamina  5
+Stormi
+Barnaby
+Krista
+Belle
+Avie
 Group: AvgBuildingExp  5 GetAvgStamina  6
-Pascale
-Marga
-Jerrilee
-Paulette
-Kathryn
+Batholomew
+Anabella
+Wendy
+Theodore
+Reagan
+Group: AvgBuildingExp  7 GetAvgStamina  6
+Rozanne
+Rand
+Maryrose
+Woodman
+Edin
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Selene
+Prudi
+Dorisa
+Henrie
+Claudio
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Letty
+Bernadine
+Rosalie
+Codee
+Shawn
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Sutherland
+Blinni
+Rice
+Carree
+Jacquenetta
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Melodee
+Carlye
+Ketty
+Collete
+Abe
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Burt
+Elsey
+Fan
+Lincoln
+Ranique
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Gwennie
+Alisa
+Brigitte
+Aurilia
+Madel
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Zippy
+Foster
+Vernon
+Dorolice
+Kamila
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Enriqueta
+Teressa
+Shanna
+Dasie
+Herculie
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Pace
+Kristel
+Gaby
+Cristie
+Quent
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Rosamund
+Tiphani
+Katusha
+Yolande
+Jade
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Betsy
+Krystalle
+Sergio
+Dorise
+Mildrid
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Quigman
+Starr
+Kamilah
+Lorenza
+Cindee
+Group: AvgBuildingExp  8 GetAvgStamina  9
+Fionna
+Eleonore
+Elias
+Reinhold
+Kynthia
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Bard
+Cristine
+Missie
+Madalyn
+Konstantin
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Olympie
+Keriann
+Thedrick
+Adel
+Porter
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Dedra
+Avraham
+Berni
+Buck
+Doralynne
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Nisa
+Esta
+Haskell
+Robbyn
+Sybilla
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Guglielma
+Sabine
+Gaven
+Madelyn
+Trip
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Sonny
+Kane
+Annamarie
+Maria
+Roseann
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Laurent
+Isidore
+Carlene
+Izzi
+Audry
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Arianne
+Jorey
+Larissa
+Cherey
+Breanne
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Niccolo
+Brunella
+Ninnette
+Roxine
+Avram
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Marketa
+Lyn
+Alameda
+Tiffi
+Marysa
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Halli
+Tammie
+Mariya
+Tarzan
+Beatriz
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Sullivan
+Francis
+Gerty
+Natalee
+Jamey
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Israel
+Trever
+Tracey
+Kimball
+Kelcey
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Sylvie
+Cissy
+Elicia
+Meredeth
+Joao
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Barthel
+Elna
+Adora
+Rogers
+Rachel
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Lorine
+Cy
+Coral
+Yancy
+Joni
+Group: AvgBuildingExp  9 GetAvgStamina  8
+Brynna
+Gerta
+Blythe
+Inge
+Laurella
+Group: AvgBuildingExp  9 GetAvgStamina  7
+Susan
+Hadria
+Rosanne
+Agatha
+Sibbie
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Zebulen
+Partha
+Else
+Raf
+Shem
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Leontine
+Lusa
+Venita
+Marcelo
+Sherill
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Taffy
+Aubree
+Northrup
+Tallie
+Niels
+Group: AvgBuildingExp  8 GetAvgStamina  8
+Mame
+Cliff
+Eimile
+Parrnell
+Raye
+Group: AvgBuildingExp  7 GetAvgStamina  7
+Hunter
+Marjorie
+Frannie
+Angelle
+Georgina
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Angeline
+Bertha
+Beauregard
+Kettie
+Roseanna
+Group: AvgBuildingExp  8 GetAvgStamina  6
+Hollis
+Obadiah
+Monroe
+Jefferson
+Sanford
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Roslyn
+Jerri
+Devondra
+Ferne
+Alan
+Group: AvgBuildingExp  7 GetAvgStamina  8
+Mignon
+Tilly
+Husain
+Alis
+Glenna
+Group: AvgBuildingExp  7 GetAvgStamina  7
+Francesmary
+Donetta
+Fedora
+Amandie
+Jameson
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Donal
+Phillis
+Garfinkel
+Dori
+Trev
+Group: AvgBuildingExp  7 GetAvgStamina  8
+Frances
+Colleen
+Brigida
+Cherin
+Karita
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Thorstein
+Sophia
+Mella
+Duane
+Nari
+Group: AvgBuildingExp  7 GetAvgStamina  7
+Talia
+Sammie
+Suzetta
+Natalia
+Benetta
+Group: AvgBuildingExp  7 GetAvgStamina  8
+Gabey
+Sashenka
+Amandi
+Fowler
+Theo
+Group: AvgBuildingExp  8 GetAvgStamina  7
+Elisabet
+Cassi
+Marinna
+Rosana
+Edyth
+Group: AvgBuildingExp  6 GetAvgStamina  7
+Leela
+Shara
+Desdemona
+Lucilia
+Ford
+Group: AvgBuildingExp  6 GetAvgStamina  6
+Aharon
+Giavani
+Kissee
+Jerrie
+Fatima
+Group: AvgBuildingExp  6 GetAvgStamina  5
+Charmian
+Juliann
+Leila
+Maurita
+Elijah
+Group: AvgBuildingExp  6 GetAvgStamina  6
+Mordecai
+Tine
+Casper
+Brandice
+Peter
+Group: AvgBuildingExp  5 GetAvgStamina  7
+Amy
+Vivianne
+Paulo
+Rickey
+Krystal
+Group: AvgBuildingExp  7 GetAvgStamina  5
+Clem
+Dolorita
+Spencer
+Doralia
+Koren
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Derrol
+Teodoro
+Todd
+Keefe
+Teriann
+Group: AvgBuildingExp  5 GetAvgStamina  5
+Isabel
+Jaleh
+Hewet
+Julee
+Kassandra
