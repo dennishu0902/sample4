@@ -1,6 +1,7 @@
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
+#include <algorithm>
 #include "Volunteer.hpp"
 #include "Group.hpp"
 using namespace std;
