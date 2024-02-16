@@ -63,38 +63,17 @@ void GetMatchedGroup(std::vector<Group> grps, std::vector<Group> &grps_w)
 
 }
 
-int main(int argc, char *argv[])
-{   
-    
-    std::vector<Volunteer> vols;
-    std::vector<Volunteer> vols_r;
-    std::vector<string>    vStr;
-    std::string sname;
-    int i;
+int ReadfromFile(char *FileName, std::vector<Volunteer>& vols)
+{
+    std::fstream fs;
+    int totalpeople=0,cnt;
     int build_experience;
     int physical_stamina;
     bool returning;
-    int totalpeople=0;
-
-    std::vector<Group> grps; 
-    std::vector<Group> grps_w;
- 
-    std::fstream fs,fsout;
-    std::string s1;
-    
-    std::vector<string> s_volin;
-    int  cnt;
-   
-    if(argc < 4) 
-    {
-        std::cout << "4 parameters"<<std::endl;
-        return -1;
-    } 
-    srand(time(NULL));
-    
-    fs.open (argv[1], std::fstream::in );
+    std::string s1,sname;
+    fs.open (FileName, std::fstream::in );
     if(!fs.is_open()) return -1;
-    cnt = 0;
+    
     while(std::getline(fs, s1,' ')) 
     {
         switch(cnt)
@@ -114,6 +93,35 @@ int main(int argc, char *argv[])
         }
     }
     fs.close();
+    return totalpeople;
+}
+int main(int argc, char *argv[])
+{   
+    
+    std::vector<Volunteer> vols;
+    std::vector<Volunteer> vols_r;
+    std::vector<string>    vStr;
+    
+    int i;
+  
+    std::vector<Group> grps; 
+    std::vector<Group> grps_w;
+ 
+    std::fstream fsout;
+    
+    std::vector<string> s_volin;
+    int  cnt,totalpeople;
+   
+    if(argc < 4) 
+    {
+        std::cout << "4 parameters"<<std::endl;
+        return -1;
+    } 
+    srand(time(NULL));
+    
+    totalpeople = ReadfromFile(argv[1], vols);
+    if(totalpeople == -1) return -1;
+    
     std::cout << "Read file end"<<std::endl;
     //Assign returning, make sure at least one returning in group 
    for(i=0;i< totalpeople/GROUPSIZE;i++)
