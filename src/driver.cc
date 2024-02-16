@@ -8,33 +8,8 @@ using namespace std;
 #define GROUPSIZE 5
 #define GOOD_EXP  5 
 #define GOOD_STM  5
-#define MAXITERATION 500000
+#define MAXITERATION 100000
 
-std::vector<string>  split(string strin)   // whitespace
-{
-    std::vector<string>  words;
-    std::string str1;
-    std::string sname;
-    unsigned int i=0;
-    while( i < strin.size())
-     {
-       if(strin[i] != ' ') 
-           {
-             str1.push_back(strin[i]);
-             i++;
-           }
-       else
-         { 
-            i++; 
-            if(str1.empty()==true) continue;//white space at first
-            words.push_back(str1);
-            str1.clear();
-        }
-     }
-     //the end word, no white space
-     if(str1.empty() !=true) words.push_back(str1);
-     return words; 
-}
 bool CheckifAllfine(std::vector<Group> grps)
 {
 bool allfine = true;
@@ -87,12 +62,13 @@ void GetMatchedGroup(std::vector<Group> grps, std::vector<Group> &grps_w)
     }
 
 }
-#define MAX_LINE 120
+
 int main(int argc, char *argv[])
 {   
     
     std::vector<Volunteer> vols;
     std::vector<Volunteer> vols_r;
+    std::vector<string>    vStr;
     std::string sname;
     int i;
     int build_experience;
@@ -100,42 +76,45 @@ int main(int argc, char *argv[])
     bool returning;
     int totalpeople=0;
 
-    std::vector<Group> grps;
+    std::vector<Group> grps; 
     std::vector<Group> grps_w;
  
     std::fstream fs,fsout;
-    char title[MAX_LINE];
-    string s1;
+    std::string s1;
+    
     std::vector<string> s_volin;
     int  cnt;
    
-    if(argc < 3) 
+    if(argc < 4) 
     {
-        std::cout << "3 parameters"<<std::endl;
+        std::cout << "4 parameters"<<std::endl;
         return -1;
     } 
     srand(time(NULL));
+    
     fs.open (argv[1], std::fstream::in );
-    do
+    if(!fs.is_open()) return -1;
+    cnt = 0;
+    while(std::getline(fs, s1,' ')) 
     {
-    fs.getline(title,MAX_LINE);   
-    s1 = title;
-    cnt = s1.size();
-    if(cnt!=0)
+        switch(cnt)
         {
-        s_volin = split(s1);
-        sname = s_volin[0];
-        build_experience = stoi(s_volin[1]);
-        physical_stamina = stoi(s_volin[2]);
-        if(stoi(s_volin[3]))
-            returning = true;
-        else
-            returning = false;    
-        Volunteer Vol=Volunteer(sname,build_experience,physical_stamina,returning);
-        vols.push_back(Vol);
-        totalpeople++;
+            case 0: 
+                  sname = s1; cnt++;break;
+            case 1: 
+                  build_experience = stoi(s1); cnt++; break;
+            case 2: 
+                  physical_stamina = stoi(s1); cnt++; break;
+            case 3: 
+                  returning = stoi(s1) ? true : false; cnt=0; 
+                  Volunteer Vol=Volunteer(sname,build_experience,physical_stamina,returning);
+                  vols.push_back(Vol);
+                  totalpeople++;      
+                  break;
         }
-    }while(cnt); 
+    }
+    fs.close();
+    std::cout << "Read file end"<<std::endl;
     //Assign returning, make sure at least one returning in group 
    for(i=0;i< totalpeople/GROUPSIZE;i++)
     {
@@ -161,6 +140,6 @@ int main(int argc, char *argv[])
      cout << "finally" << grps_w.size()<<std::endl;
      fsout.close();
   } 
-   fs.close();
+   
    return 0;  
 }

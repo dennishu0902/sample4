@@ -10,8 +10,8 @@ class Group
    std::vector<Volunteer> myList_;
 public:
    int AddVolunteer(const Volunteer &vol);
-   int GetAvgBuildingExp() const;
-   int GetAvgStamina() const;
+   double GetAvgBuildingExp() const;
+   double GetAvgStamina() const;
    int GetReturningMembers();
    Volunteer& GetRandomVolunteer();
    friend ostream& operator<<(std::ostream &os,  const Group &g_in)

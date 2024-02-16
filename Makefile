@@ -10,7 +10,7 @@ INC := include
 MAINFILE := $(SRC)/driver.cc
 
 # Build directories and output
-TARGET := $(BIN)/driver
+TARGET := $(BIN)/exec
 BUILD := build
 
 # Library search directories and flags

@@ -7,29 +7,29 @@ int  Group::AddVolunteer(const Volunteer &vol)
    myList_.push_back(vol);
    return 1;
 }
-int  Group::GetAvgBuildingExp() const
+double  Group::GetAvgBuildingExp() const
 {
-  int avgexp=0,cnt=0;
+  double avgexp=0.0,totalexp=0.0;
+  int cnt=0;
+  if(myList_.empty()) return avgexp;
   for(auto vol:myList_)
      {
-        avgexp += vol.GetBuildingExperience();
+        totalexp += vol.GetBuildingExperience();
         cnt    += 1;
      }
-  if(cnt != 0)  avgexp = avgexp/cnt;
-  else  avgexp = 0;
-  return avgexp;
+  return totalexp/cnt;
 }
-int  Group::GetAvgStamina() const
+double  Group::GetAvgStamina() const
 {
-  int avgstamina=0,cnt=0;
+  double avgsta=0.0,totalsta=0.0;
+  int cnt=0;
+  if(myList_.empty()) return avgsta;
   for(auto vol:myList_)
      {
-        avgstamina += vol.GetPhysicalStamina();
+        avgsta += vol.GetPhysicalStamina();
         cnt    += 1;
      }
-  if(cnt != 0)  avgstamina = avgstamina/cnt;
-  else  avgstamina = 0;
-  return avgstamina;
+  return totalsta/cnt;
 }
 int Group::GetReturningMembers()
 {
