@@ -40,16 +40,11 @@ int Group::GetReturningMembers()
 }
 Volunteer&  Group::GetRandomVolunteer()
 {
-  int i,pos,size;
+  int i,size;
   i = rand();
   size = myList_.size();
   assert(size>0);
   i = i % size;
-  pos = 0;
-  for(auto &vol:myList_)
-    {
-      if(pos == i) return vol;
-      else pos++;
-    }
+  return myList_[i];
 }
 

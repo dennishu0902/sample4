@@ -1,4 +1,5 @@
 #include "Volunteer.hpp"
+const unsigned int kMinAllowed=2;
 Volunteer::Volunteer(const std::string &name, double build_experience, double physical_stamina, bool returning)
 {
     vname_ = name;

@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     std::vector<Volunteer> vols;
     std::vector<Volunteer> vols_r;
     std::string sname;
-    int i; 
+    int i;
     int build_experience;
     int physical_stamina;
     bool returning;
