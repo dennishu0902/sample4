@@ -7,13 +7,13 @@
 
 class Group
 {
-   std::vector<Volunteer> myList;
+   std::vector<Volunteer> myList_;
 public:
    int AddVolunteer(const Volunteer &vol);
    int GetAvgBuildingExp() const;
    int GetAvgStamina() const;
-   std::vector<Volunteer> GetReturningMembors();
-   Volunteer* GetRandomVolunteer();
+   int GetReturningMembers();
+   Volunteer& GetRandomVolunteer();
    friend ostream& operator<<(std::ostream &os,  const Group &g_in)
    {
       os << "Group:" ;
@@ -22,7 +22,7 @@ public:
       os << " GetAvgStamina  " ;
       os << g_in.GetAvgStamina();
       os << std::endl; 
-      for(auto g1:g_in.myList)
+      for(auto g1:g_in.myList_)
       {
          os << g1.GetName()<< std::endl;
       }

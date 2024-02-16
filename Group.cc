@@ -4,13 +4,13 @@
 
 int  Group::AddVolunteer(const Volunteer &vol)
 {
-   myList.push_back(vol);
+   myList_.push_back(vol);
    return 1;
 }
 int  Group::GetAvgBuildingExp() const
 {
   int avgexp=0,cnt=0;
-  for(auto vol:myList)
+  for(auto vol:myList_)
      {
         avgexp += vol.GetBuildingExperience();
         cnt    += 1;
@@ -22,7 +22,7 @@ int  Group::GetAvgBuildingExp() const
 int  Group::GetAvgStamina() const
 {
   int avgstamina=0,cnt=0;
-  for(auto vol:myList)
+  for(auto vol:myList_)
      {
         avgstamina += vol.GetPhysicalStamina();
         cnt    += 1;
@@ -31,26 +31,25 @@ int  Group::GetAvgStamina() const
   else  avgstamina = 0;
   return avgstamina;
 }
-std::vector<Volunteer>  Group::GetReturningMembors()
+int Group::GetReturningMembers()
 {
-   std::vector<Volunteer> returning;
-   for(auto vol:myList)
-      if(vol.isReturning() == true) returning.push_back(vol);
-   return  returning;
+   int i=0;
+   for(auto vol:myList_)
+      if(vol.isReturning()) i++;
+   return  i;
 }
-Volunteer*  Group::GetRandomVolunteer()
+Volunteer&  Group::GetRandomVolunteer()
 {
   int i,pos,size;
   i = rand();
-  size = myList.size();
+  size = myList_.size();
   assert(size>0);
   i = i % size;
   pos = 0;
-  for(auto &vol:myList)
+  for(auto &vol:myList_)
     {
-      if(pos == i) return &vol;
+      if(pos == i) return vol;
       else pos++;
     }
-    return NULL;
 }
 

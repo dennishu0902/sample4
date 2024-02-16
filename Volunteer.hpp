@@ -6,15 +6,15 @@
 using namespace std;
 class Volunteer
 {
-    std::string vname;
-    int  m_BuildingExperience;
-    int  m_PhysicalStamina;
-    bool m_isReturning;
+    std::string vname_;
+    double  BuildingExperience_;
+    double  PhysicalStamina_;
+    bool isReturning_;
 public:
-    Volunteer(const std::string &name, int build_experience, int physical_stamina, bool returning);
+    Volunteer(const std::string &name, double build_experience, double physical_stamina, bool returning);
     std::string GetName();
-    int GetBuildingExperience();
-    int GetPhysicalStamina();
+    double GetBuildingExperience();
+    double GetPhysicalStamina();
     bool isReturning();
 };
 #endif

@@ -8,7 +8,7 @@ using namespace std;
 #define GROUPSIZE 5
 #define GOOD_EXP  5
 #define GOOD_STM  5
-#define MAXITERATION 50
+#define MAXITERATION 500000
 
 std::vector<string>  split(string strin)   // whitespace
 {
@@ -38,10 +38,62 @@ std::vector<string>  split(string strin)   // whitespace
      if(str1.empty() !=true) words.push_back(str1);
      return words; 
 }
+bool CheckifAllfine(std::vector<Group> grps)
+{
+bool allfine = true;
+ for(auto iter:grps)
+    {
+        if((iter.GetAvgBuildingExp() < GOOD_EXP) || (iter.GetAvgStamina() < GOOD_STM)||(iter.GetReturningMembers() < 1))
+        {   //satisfied, move to grp_w
+            allfine = false;
+            break;
+        }
+    }
+return allfine;    
+}
+void GetOptGroup(std::vector<Group> &grps)
+{
 
+  int i=0;
+  while(i< MAXITERATION)
+    {
+       //find Group pair
+        int index1  =rand()% grps.size();
+        int index2  =rand()% grps.size();
+        while(index1 == index2) index2  =rand()% grps.size();
+
+        Volunteer& Vol1 = grps[index1].GetRandomVolunteer();
+        Volunteer& Vol2 = grps[index2].GetRandomVolunteer();
+        swap(Vol1, Vol2);
+        i++;
+        //check 
+        if(CheckifAllfine(grps)) { cout<<"BREAK" <<i ;break;}
+     }
+}
+void GetMatchedGroup(std::vector<Group> grps, std::vector<Group> &grps_w)
+{  
+    #if 0
+    for(auto iter=grps.begin();iter != grps.end();iter++)
+    {
+        if(((*iter).GetAvgBuildingExp() >= GOOD_EXP) && ((*iter).GetAvgStamina() >= GOOD_STM))
+        {   //satisfied, move to grp_w
+            grps_w.push_back(*iter);
+        }
+    } 
+    #endif
+    for(auto iter:grps)
+    {
+        if((iter.GetAvgBuildingExp() >= GOOD_EXP) && (iter.GetAvgStamina() >= GOOD_STM)&& (iter.GetReturningMembers() >= 1))
+        {   //satisfied, move to grp_w
+            grps_w.push_back(iter);
+        }
+    }
+
+}
+#define MAX_LINE 120
 int main(int argc, char *argv[])
 {   
-    Volunteer  *pVol, *pVol1, *pVol2;
+    
     std::vector<Volunteer> vols;
     std::vector<Volunteer> vols_r;
     std::string sname;
@@ -54,17 +106,15 @@ int main(int argc, char *argv[])
     int total_physical_stamina=0;
     int total_returning=0;
 
-    Group *pGrp1=NULL;
     std::vector<Group> grps;
     std::vector<Group> grps_w;
  
     std::fstream fs,fsout;
-    char title[256];
+    char title[MAX_LINE];
     string s1;
     std::vector<string> s_volin;
     int  cnt;
-    int  maxgrps;
-
+   
     if(argc < 3) 
     {
         std::cout << "3 parameters"<<std::endl;
@@ -72,10 +122,9 @@ int main(int argc, char *argv[])
     } 
     srand(time(NULL));
     fs.open (argv[1], std::fstream::in );
-    
     do
     {
-    fs.getline(title,256);   
+    fs.getline(title,MAX_LINE);   
     s1 = title;
     cnt = s1.size();
     if(cnt!=0)
@@ -88,154 +137,34 @@ int main(int argc, char *argv[])
             returning = true;
         else
             returning = false;    
-        pVol = new Volunteer(sname,build_experience,physical_stamina,returning);
-        
-        if(returning) 
-        {
-            vols_r.push_back(*pVol); 
-            total_returning++;
-        }
-        else
-            vols.push_back(*pVol);
+        Volunteer Vol=Volunteer(sname,build_experience,physical_stamina,returning);
+        vols.push_back(Vol);
         totalpeople++;
         }
     }while(cnt); 
     //Assign returning, make sure at least one returning in group 
-    if((totalpeople/GROUPSIZE) >= total_returning)
-       maxgrps = total_returning;
-    else 
-       {
-        maxgrps = totalpeople/GROUPSIZE;   
-        //move some returning to general
-        for(i=maxgrps; i<total_returning; i++)
-           {
-            vols.push_back(vols_r.back());
-            vols_r.pop_back();
-           }
-       }
-    for(i=0;i<maxgrps;i++)
+   for(i=0;i< totalpeople/GROUPSIZE;i++)
     {
-        pGrp1 = new Group();
-        pGrp1->AddVolunteer(vols_r.back());
-        vols_r.pop_back();
-        for(j=0; j< GROUPSIZE -1; j++)
+        Group Grp1;
+        for(j=0; j< GROUPSIZE; j++)
           {
-            pGrp1->AddVolunteer(vols.back());
+            Grp1.AddVolunteer(vols.back());
             vols.pop_back();
           } 
-        grps.push_back(*pGrp1);   
+        grps.push_back(Grp1);   
     }
-    for(auto iter=grps.begin();iter != grps.end();)
-    {
-        if(((*iter).GetAvgBuildingExp() == GOOD_EXP) && ((*iter).GetAvgStamina() == GOOD_STM))
-        {   //satisfied, move to grp_w
-            grps_w.push_back(*iter);
-            grps.erase(iter);   
-        }
-        else
-            iter++;
-    } 
 
-    cnt=0;
-    for(auto iter=grps.begin();iter != grps.end();iter++)
+    GetOptGroup(grps);
+    GetMatchedGroup(grps,grps_w);
+    if(grps_w.size())
     {
-        if(((*iter).GetAvgBuildingExp() >= GOOD_EXP) && ((*iter).GetAvgStamina() >= GOOD_STM))
-        {   //satisfied, move to grp_w
-            cnt++;
-        }
-    } 
-    cout << "initial" << cnt + grps_w.size();
-    cout << std::endl;
-    i = 0;
-    j=k=h=l=0;
-    std::vector<Group>::iterator G1,G2,G3,G4;
-    while(i< MAXITERATION)
-    {
-       //find Group pair
-       for(auto iter=grps.begin();iter != grps.end();iter++)
-        {
-         if(((*iter).GetAvgBuildingExp() >= GOOD_EXP) && ((*iter).GetAvgStamina() >= GOOD_STM)) 
-              { G1 = iter; j=1;}      
-         else if(((*iter).GetAvgBuildingExp() <= GOOD_EXP) && ((*iter).GetAvgStamina() <= GOOD_STM)) 
-              { G2 = iter; k=1;}   
-         else if(((*iter).GetAvgBuildingExp() >= GOOD_EXP) && ((*iter).GetAvgStamina() <= GOOD_STM)) 
-              { G3 = iter; h=1;}  
-         else if(((*iter).GetAvgBuildingExp() <= GOOD_EXP) && ((*iter).GetAvgStamina() >= GOOD_STM)) 
-              { G4 = iter; l=1;}     
-         if((j==1) && (k==1))
-         { //matching
-           cnt = 0;
-           do
-           {
-            pVol1 = G1->GetRandomVolunteer();
-            pVol2 = G2->GetRandomVolunteer();
-            if(pVol1->isReturning() && pVol2->isReturning() )
-            {
-                swap(*pVol1,*pVol2);
-
-            }
-            else if((!pVol1->isReturning()) && (!pVol2->isReturning()) )
-            {
-                swap(*pVol1,*pVol2);
-            }
-            /* code */
-           } while (cnt++<GROUPSIZE);
-           j=0;
-           k=0;
-         }
-        if((h==1) && (l==1))
-         { //matching
-           cnt = 0;
-           do
-           {
-            pVol1 = G3->GetRandomVolunteer();
-            pVol2 = G4->GetRandomVolunteer();
-            if(pVol1->isReturning() && pVol2->isReturning() )
-            {
-                swap(*pVol1,*pVol2);
-            }
-            else if((!pVol1->isReturning()) && (!pVol2->isReturning()) )
-            {
-                swap(*pVol1,*pVol2);
-            }
-           } while (cnt++<GROUPSIZE);
-           h=0;
-           l=0;
-         }
-        }
-       i++;  
-
-    }
-   
-   for(auto iter=grps.begin();iter != grps.end();)
-    {
-        if(((*iter).GetAvgBuildingExp() >= GOOD_EXP) && ((*iter).GetAvgStamina() >= GOOD_STM))
-        {   //satisfied, move to grp_w
-            grps_w.push_back(*iter);
-            grps.erase(iter);
-        }
-        else
-          iter++;
-    } 
-  
-  if(grps_w.size())
-  {
-     fsout.open(argv[3], std::fstream::out );
-    for(auto iter=grps_w.begin();iter != grps_w.end(); iter++)
+      fsout.open(argv[3], std::fstream::out );
+     for(auto iter=grps_w.begin();iter != grps_w.end(); iter++)
      {
             fsout << *iter;
      }
     
      cout << "finally" << grps_w.size()<<std::endl;
-    /*   
-    if(grps.size())
-    {
-     fsout << "lost"<<std::endl;
-     for(auto iter=grps.begin();iter != grps.end(); iter++)
-     {
-            fsout << *iter;
-     }
-    } */
      fsout.close();
   } 
    fs.close();

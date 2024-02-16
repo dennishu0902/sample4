@@ -1,29 +1,29 @@
 #include "Volunteer.hpp"
-Volunteer::Volunteer(const std::string &name, int build_experience, int physical_stamina, bool returning)
+Volunteer::Volunteer(const std::string &name, double build_experience, double physical_stamina, bool returning)
 {
-    vname = name;
+    vname_ = name;
     if(build_experience < MIN_ALLOWED) build_experience = MIN_ALLOWED;
     if(build_experience > MAX_ALLOWED) build_experience = MAX_ALLOWED;
     if(physical_stamina < MIN_ALLOWED) physical_stamina = MIN_ALLOWED;
     if(physical_stamina > MAX_ALLOWED) physical_stamina = MAX_ALLOWED;
-    m_BuildingExperience = build_experience;
-    m_PhysicalStamina = physical_stamina;
-    m_isReturning = returning;
+    BuildingExperience_ = build_experience;
+    PhysicalStamina_ = physical_stamina;
+    isReturning_ = returning;
 }
 
 std::string Volunteer::GetName()
 {
-   return vname;
+   return vname_;
 }
-int Volunteer::GetBuildingExperience()
+double Volunteer::GetBuildingExperience()
 {
-    return m_BuildingExperience;
+    return BuildingExperience_;
 }
-int Volunteer::GetPhysicalStamina()
+double Volunteer::GetPhysicalStamina()
 {
-    return m_PhysicalStamina;
+    return PhysicalStamina_;
 }
 bool Volunteer::isReturning()
 {
-    return  m_isReturning;
+    return  isReturning_;
 }
