@@ -1,11 +1,12 @@
 # Pre-compiler and Compiler flags
-CXX_FLAGS := -Wall -Wextra -std=c++17 -ggdb
+CXX_FLAGS := -Wall -Wextra -Werror -pedantic -std=c++2a  -ggdb
 PRE_FLAGS := -MMD -MP
 CXX :=clang++
 # Project directory structure
 BIN := bin
 SRC := src
-LIB := lib
+#LIB := lib
+LIB := 
 INC := include
 MAINFILE := $(SRC)/driver.cc
 
